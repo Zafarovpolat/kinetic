@@ -32,8 +32,6 @@ const Studio: React.FC<{ onBack: () => void; onNavigate: (view: string) => void 
       exit={{ opacity: 0 }}
       className="bg-black text-white min-h-screen selection:bg-white selection:text-black"
     >
-      <Header onNavigate={onNavigate} />
-
       {/* Hero Section - Vertical Typography */}
       <section className="relative h-screen flex items-center justify-center px-6 md:px-20 z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 w-full max-w-screen-2xl items-center">

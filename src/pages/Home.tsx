@@ -52,8 +52,6 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
 
   return (
     <div className="grain min-h-screen bg-black font-sans selection:bg-white selection:text-black">
-      <Header onNavigate={onNavigate} />
-
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video */}

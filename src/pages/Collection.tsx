@@ -76,8 +76,6 @@ const Collection: React.FC<{ onBack: () => void; onNavigate: (view: string) => v
       exit={{ opacity: 0 }}
       className="bg-black text-white min-h-screen pb-10"
     >
-      <Header onNavigate={onNavigate} />
-
       {/* Hero */}
       <section className="pt-40 px-6 md:px-20 mb-40">
         <div className="max-w-screen-2xl mx-auto">

@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import Archive from "./pages/Archive";
 import Studio from "./pages/Studio";
+import Header from "./components/Header";
 
 export default function App() {
   const [view, setView] = useState('home');
@@ -42,6 +43,7 @@ export default function App() {
 
   return (
     <div ref={containerRef} className="grain min-h-screen bg-black font-sans selection:bg-white selection:text-black">
+      <Header onNavigate={setView} />
       <AnimatePresence mode="wait">
         <motion.div
           key={view}
