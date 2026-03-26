@@ -18,7 +18,7 @@ export default function Header({ onNavigate }: { onNavigate: (view: string) => v
           KINETIC
         </motion.div>
         
-        <div className="hidden md:flex gap-12 text-[10px] font-mono uppercase tracking-[0.3em] items-center">
+        <div className={`hidden md:flex gap-12 text-[10px] font-mono uppercase tracking-[0.3em] items-center transition-opacity duration-300 ${isMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <button onClick={() => onNavigate('collection')} className="hover:opacity-50 transition-opacity">Collection</button>
           <button onClick={() => onNavigate('archive')} className="hover:opacity-50 transition-opacity">Archive</button>
           <button onClick={() => onNavigate('studio')} className="hover:opacity-50 transition-opacity">Studio</button>

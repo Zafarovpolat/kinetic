@@ -11,7 +11,7 @@ export default function App() {
   const [view, setView] = useState('home');
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Lenis initialization
+  // Re-init Lenis on view change
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -34,17 +34,12 @@ export default function App() {
     return () => {
       lenis.destroy();
     };
-  }, [view]); // Re-init on view change to reset scroll
-
-  // Scroll to top on view change
-  useEffect(() => {
-    window.scrollTo(0, 0);
   }, [view]);
 
   return (
     <div ref={containerRef} className="grain min-h-screen bg-black font-sans selection:bg-white selection:text-black">
       <Header onNavigate={setView} />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <motion.div
           key={view}
           initial={{ opacity: 0, x: 20, filter: "blur(20px)", scale: 0.98 }}
