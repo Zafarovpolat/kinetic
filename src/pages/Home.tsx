@@ -75,12 +75,12 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
           style={{ scale, opacity, y, filter: blur }}
           className="relative z-10 w-full h-full flex flex-col items-center justify-center text-mask-container"
         >
-          <div className="flex flex-col items-center leading-[0.8] select-none">
+          <div className="flex flex-col items-center leading-[0.8] select-none py-20">
             <motion.h1 
               initial={{ y: 100, opacity: 0, filter: "blur(20px)" }}
               animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[25vw] font-display tracking-tighter liquid-text"
+              className="text-[22vw] font-display tracking-tighter liquid-text"
             >
               RAW
             </motion.h1>
@@ -88,7 +88,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
               initial={{ y: 100, opacity: 0, filter: "blur(20px)" }}
               animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[25vw] font-display tracking-tighter liquid-text"
+              className="text-[22vw] font-display tracking-tighter liquid-text"
             >
               ENERGY
             </motion.h1>

@@ -129,7 +129,10 @@ const Archive: React.FC<{ onBack: () => void; onNavigate: (view: string) => void
       {/* CTA */}
       <section className="mt-60 mb-32 px-6 md:px-20 text-center">
         <Reveal>
-          <div className="inline-block group cursor-pointer">
+          <div 
+            onClick={() => onNavigate('studio')}
+            className="inline-block group cursor-pointer"
+          >
             <h2 className="text-6xl md:text-9xl font-display tracking-tighter group-hover:italic transition-all duration-500">
               STAY DISTORTED.
             </h2>

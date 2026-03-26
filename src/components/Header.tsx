@@ -13,7 +13,7 @@ export default function Header({ onNavigate }: { onNavigate: (view: string) => v
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => onNavigate('home')}
-          className="text-2xl font-display tracking-tighter cursor-pointer"
+          className="text-2xl font-display tracking-[0.2em] cursor-pointer"
         >
           KINETIC
         </motion.div>
@@ -67,8 +67,8 @@ export default function Header({ onNavigate }: { onNavigate: (view: string) => v
               <div className="space-y-4">
                 <p className="opacity-30">Social</p>
                 <ul className="space-y-2">
-                  <li><a href="#" className="hover:opacity-50 transition-opacity flex items-center gap-2"><Instagram size={12} /> Instagram</a></li>
-                  <li><a href="#" className="hover:opacity-50 transition-opacity flex items-center gap-2"><Globe size={12} /> Telegram</a></li>
+                  <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-50 transition-opacity flex items-center gap-2"><Instagram size={12} /> Instagram</a></li>
+                  <li><a href="https://t.me" target="_blank" rel="noopener noreferrer" className="hover:opacity-50 transition-opacity flex items-center gap-2"><Globe size={12} /> Telegram</a></li>
                 </ul>
               </div>
               <div className="space-y-4">

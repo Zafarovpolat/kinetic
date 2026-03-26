@@ -33,16 +33,19 @@ export default function Footer({ onNavigate }: { onNavigate: (view: string) => v
               <div className="space-y-4">
                 <p className="opacity-50">Legal</p>
                 <ul className="space-y-2">
-                  <li><a href="#" className="hover:text-white/50 transition-colors duration-300">Privacy</a></li>
-                  <li><a href="#" className="hover:text-white/50 transition-colors duration-300">Terms</a></li>
-                  <li><a href="#" className="hover:text-white/50 transition-colors duration-300">Cookies</a></li>
+                  <li><button onClick={() => alert('Privacy Policy coming soon')} className="hover:text-white/50 transition-colors duration-300">Privacy</button></li>
+                  <li><button onClick={() => alert('Terms of Service coming soon')} className="hover:text-white/50 transition-colors duration-300">Terms</button></li>
+                  <li><button onClick={() => alert('Cookie Policy coming soon')} className="hover:text-white/50 transition-colors duration-300">Cookies</button></li>
                 </ul>
               </div>
             </div>
           </div>
           
           <div className="flex flex-col items-end gap-6 w-full md:w-auto">
-            <div className="w-full md:w-80 border-b border-white/20 pb-4 flex justify-between items-center group cursor-pointer">
+            <div 
+              onClick={() => alert('Newsletter subscription coming soon')}
+              className="w-full md:w-80 border-b border-white/20 pb-4 flex justify-between items-center group cursor-pointer"
+            >
               <span className="font-mono text-[10px] uppercase tracking-widest">Newsletter</span>
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
             </div>

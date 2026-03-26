@@ -44,7 +44,7 @@ const Studio: React.FC<{ onBack: () => void; onNavigate: (view: string) => void 
           </div>
           <div className="md:col-span-10 text-center md:text-left">
             <Reveal y={100}>
-              <h1 className="text-[15vw] md:text-[12vw] font-display tracking-tighter leading-[0.8] mb-10">
+              <h1 className="text-[15vw] md:text-[12vw] font-display tracking-tighter leading-[1] mb-10">
                 KINETIC <br /> 
                 <span className="italic pl-[5vw]">LABORATORY.</span>
               </h1>
@@ -152,7 +152,7 @@ const Studio: React.FC<{ onBack: () => void; onNavigate: (view: string) => void 
               <Reveal y={50}>
                 <div className="space-y-4">
                   <p className="font-mono text-[10px] uppercase tracking-[0.5em] opacity-30">Connect with the system</p>
-                  <h2 className="text-[12vw] font-display tracking-tighter leading-[0.8] mb-20">
+                  <h2 className="text-[12vw] font-display tracking-tighter leading-[1] mb-20">
                     GET IN <br /> 
                     <span className="italic">TOUCH.</span>
                   </h2>

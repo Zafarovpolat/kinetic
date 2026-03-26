@@ -43,18 +43,27 @@ export default function App() {
   return (
     <div ref={containerRef} className="grain min-h-screen bg-black font-sans selection:bg-white selection:text-black">
       <AnimatePresence mode="wait">
-        {view === 'home' && (
-          <Home key="home" onNavigate={setView} />
-        )}
-        {view === 'collection' && (
-          <Collection key="collection" onBack={() => setView('home')} onNavigate={setView} />
-        )}
-        {view === 'archive' && (
-          <Archive key="archive" onBack={() => setView('home')} onNavigate={setView} />
-        )}
-        {view === 'studio' && (
-          <Studio key="studio" onBack={() => setView('home')} onNavigate={setView} />
-        )}
+        <motion.div
+          key={view}
+          initial={{ opacity: 0, x: 20, filter: "blur(20px)", scale: 0.98 }}
+          animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
+          exit={{ opacity: 0, x: -20, filter: "blur(20px)", scale: 1.02 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full"
+        >
+          {view === 'home' && (
+            <Home onNavigate={setView} />
+          )}
+          {view === 'collection' && (
+            <Collection onBack={() => setView('home')} onNavigate={setView} />
+          )}
+          {view === 'archive' && (
+            <Archive onBack={() => setView('home')} onNavigate={setView} />
+          )}
+          {view === 'studio' && (
+            <Studio onBack={() => setView('home')} onNavigate={setView} />
+          )}
+        </motion.div>
       </AnimatePresence>
 
       {/* SVG Distortion Filter */}
