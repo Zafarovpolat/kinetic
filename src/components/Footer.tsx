@@ -20,7 +20,7 @@ export default function Footer({ onNavigate }: { onNavigate: (view: string) => v
         <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
           <div className="space-y-10">
             <h3 className="text-7xl md:text-9xl font-display tracking-tighter">KINETIC</h3>
-            <div className="grid grid-cols-2 gap-20 font-mono text-[10px] uppercase tracking-[0.3em]">
+            <div className="grid grid-cols-2 gap-20 font-alt text-[10px] uppercase tracking-[0.3em]">
               <div className="space-y-4">
                 <p className="opacity-50">Navigation</p>
                 <ul className="space-y-2">
@@ -46,10 +46,10 @@ export default function Footer({ onNavigate }: { onNavigate: (view: string) => v
               onClick={() => alert('Newsletter subscription coming soon')}
               className="w-full md:w-80 border-b border-white/20 pb-4 flex justify-between items-center group cursor-pointer"
             >
-              <span className="font-mono text-[10px] uppercase tracking-widest">Newsletter</span>
+              <span className="font-alt text-[10px] uppercase tracking-widest">Newsletter</span>
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
             </div>
-            <p className="font-mono text-[10px] opacity-30">© 2026 KINETIC STUDIO. ALL RIGHTS RESERVED.</p>
+            <p className="font-alt text-[10px] opacity-30">© 2026 KINETIC STUDIO. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
       </Reveal>

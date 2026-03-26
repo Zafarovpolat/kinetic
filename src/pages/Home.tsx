@@ -29,7 +29,7 @@ const Marquee: React.FC<{ text: string; speed?: number; reverse?: boolean }> = (
         initial={{ x: reverse ? "-50%" : "0%" }}
         animate={{ x: reverse ? "0%" : "-50%" }}
         transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
-        className="flex gap-8 pr-8 text-sm font-mono uppercase tracking-[0.2em]"
+        className="flex gap-8 pr-8 text-sm font-alt uppercase tracking-[0.2em]"
       >
         {[...Array(10)].map((_, i) => (
           <span key={i} className="flex items-center gap-8">
@@ -93,7 +93,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
           </div>
           
           {/* Floating Labels */}
-          <div className="absolute bottom-10 left-10 md:left-20 text-[10px] font-mono uppercase tracking-[0.4em] text-black">
+          <div className="absolute bottom-10 left-10 md:left-20 text-[10px] font-alt uppercase tracking-[0.4em] text-black">
             <p>Spring Summer / 2026</p>
             <p>Experimental Series 01</p>
           </div>
@@ -127,7 +127,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
                 <div className="w-16 h-16 flex items-center justify-center border border-white/20 rounded-full group-hover:bg-white group-hover:text-black transition-all duration-500">
                   <ArrowRight size={24} />
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-[0.5em]">View Collection</span>
+                <span className="font-alt text-[10px] uppercase tracking-[0.5em]">View Collection</span>
               </button>
             </Reveal>
           </div>
@@ -145,7 +145,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
             <Reveal delay={0.4} y={50}>
               <div className="absolute -bottom-10 -left-10 md:-left-20 bg-white text-black p-8 md:p-12 hidden md:block">
                 <p className="text-4xl font-display tracking-tighter">01 / 2026</p>
-                <p className="font-mono text-[10px] uppercase tracking-widest mt-2">Volume One</p>
+                <p className="font-alt text-[10px] uppercase tracking-widest mt-2">Volume One</p>
               </div>
             </Reveal>
           </div>
@@ -158,7 +158,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
           <div className="p-10 md:p-20 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/10">
             <Reveal>
               <div className="flex gap-10">
-                <div className="writing-vertical-rl rotate-180 text-[10px] font-mono uppercase tracking-[0.5em] opacity-30">
+                <div className="writing-vertical-rl rotate-180 text-[10px] font-alt uppercase tracking-[0.5em] opacity-30">
                   Philosophy / 001
                 </div>
                 <h2 className="text-6xl md:text-8xl font-display tracking-tighter leading-[0.9]">
@@ -167,7 +167,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
               </div>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="text-sm font-mono uppercase tracking-widest opacity-50 mt-10 md:mt-0">
+              <p className="text-sm font-alt uppercase tracking-widest opacity-50 mt-10 md:mt-0">
                 Established in distortion / 2026
               </p>
             </Reveal>
@@ -188,7 +188,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
                   the biological and the digital.
                 </p>
                 <div className="h-px w-20 bg-black" />
-                <p className="font-mono text-xs uppercase tracking-[0.2em]">
+                <p className="font-alt text-xs uppercase tracking-[0.2em]">
                   Kinetic System v2.0.4
                 </p>
               </div>
@@ -228,7 +228,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
                 </p>
               </Reveal>
               <Reveal delay={0.4}>
-                <div className="grid grid-cols-2 gap-10 font-mono text-[10px] uppercase tracking-[0.2em]">
+                <div className="grid grid-cols-2 gap-10 font-alt text-[10px] uppercase tracking-[0.2em]">
                   <div className="space-y-2">
                     <p className="opacity-30">Location</p>
                     <p>Berlin / Studio A</p>
@@ -252,7 +252,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
               <h2 className="text-6xl md:text-8xl font-display tracking-tighter leading-none">
                 THE <br /> ESSENTIALS.
               </h2>
-              <p className="max-w-xs font-mono text-[10px] uppercase tracking-widest opacity-50 leading-relaxed">
+              <p className="max-w-xs font-alt text-[10px] uppercase tracking-widest opacity-50 leading-relaxed">
                 Stripped back to the core. No noise. Just the pure kinetic form of the modern silhouette.
               </p>
             </div>
@@ -268,7 +268,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
               <div key={i} className="bg-white p-12 group cursor-pointer overflow-hidden relative h-[500px] flex flex-col justify-between border-r border-black/10 last:border-r-0 transition-all duration-700 hover:bg-black hover:text-white">
                 <Reveal delay={i * 0.1} className="h-full flex flex-col justify-between w-full relative z-10">
                   <div className="space-y-4">
-                    <p className="font-mono text-[10px] tracking-[0.5em] opacity-30 group-hover:opacity-100 transition-opacity">0{i + 1}</p>
+                    <p className="font-alt text-[10px] tracking-[0.5em] opacity-30 group-hover:opacity-100 transition-opacity">0{i + 1}</p>
                     <motion.h3 
                       whileHover={{ filter: "blur(4px)", opacity: 0.5 }}
                       className="text-4xl font-display tracking-tighter transition-all duration-500"
@@ -283,7 +283,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
                     </p>
                     <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
                       <div className="w-8 h-px bg-current" />
-                      <p className="font-mono text-[10px] uppercase tracking-widest">Explore</p>
+                      <p className="font-alt text-[10px] uppercase tracking-widest">Explore</p>
                     </div>
                   </div>
                 </Reveal>
@@ -316,13 +316,13 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
             <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-20">
               <Reveal delay={0.1}>
                 <div className="space-y-6">
-                  <p className="font-mono text-[10px] uppercase tracking-widest opacity-30">01 / Concept</p>
+                  <p className="font-alt text-[10px] uppercase tracking-widest opacity-30">01 / Concept</p>
                   <p className="text-xl leading-snug">Every piece begins with a digital distortion. We map the glitch onto the human form, creating a dialogue between the virtual and the physical.</p>
                 </div>
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="space-y-6">
-                  <p className="font-mono text-[10px] uppercase tracking-widest opacity-30">02 / Execution</p>
+                  <p className="font-alt text-[10px] uppercase tracking-widest opacity-30">02 / Execution</p>
                   <p className="text-xl leading-snug">Using high-performance materials and magnetic hardware, we build garments that respond to the high-velocity movement of the city.</p>
                 </div>
               </Reveal>
@@ -339,7 +339,7 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
               onClick={() => onNavigate('archive')}
               className="flex justify-between items-center mb-20 cursor-pointer group"
             >
-              <h2 className="text-2xl font-mono uppercase tracking-[0.3em]">Archive / 01-04</h2>
+              <h2 className="text-2xl font-alt uppercase tracking-[0.3em]">Archive / 01-04</h2>
               <div className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-500">
                 <ArrowRight size={20} />
               </div>
@@ -358,10 +358,10 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
                 className="bg-white py-8 flex justify-between items-center group cursor-pointer hover:px-8 transition-all duration-500"
               >
                 <div className="flex items-center gap-20">
-                  <span className="font-mono text-[10px] opacity-30">{item.year}</span>
+                  <span className="font-alt text-[10px] opacity-30">{item.year}</span>
                   <h3 className="text-3xl font-display tracking-tighter group-hover:italic transition-all">{item.title}</h3>
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest opacity-30 group-hover:opacity-100">{item.category}</span>
+                <span className="font-alt text-[10px] uppercase tracking-widest opacity-30 group-hover:opacity-100">{item.category}</span>
               </div>
             ))}
           </div>

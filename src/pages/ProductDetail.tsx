@@ -54,7 +54,7 @@ const ProductDetail: React.FC<{ data: ProductData; onBack: () => void; onNavigat
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
           
           {/* Technical Specs Overlay */}
-          <div className="absolute bottom-10 left-10 font-mono text-[8px] uppercase tracking-[0.5em] space-y-2 opacity-40">
+          <div className="absolute bottom-10 left-10 font-alt text-[8px] uppercase tracking-[0.5em] space-y-2 opacity-40">
             <p>MODEL: {data.id || "KS-ARCHIVE"}</p>
             <p>LAT: 52.5200° N, LONG: 13.4050° E</p>
             <p>SYSTEM: KINETIC_OS_v4.2</p>
@@ -65,7 +65,7 @@ const ProductDetail: React.FC<{ data: ProductData; onBack: () => void; onNavigat
         <div className="w-full md:w-1/2 p-6 md:p-20 pt-20 md:pt-40 space-y-20">
           <div className="space-y-6">
             <Reveal>
-              <div className="flex items-center gap-4 font-mono text-[10px] uppercase tracking-widest opacity-40">
+              <div className="flex items-center gap-4 font-alt text-[10px] uppercase tracking-widest opacity-40">
                 <span>{data.year || "2025"}</span>
                 <span className="w-1 h-1 bg-white rounded-full" />
                 <span>{data.category}</span>
@@ -97,14 +97,14 @@ const ProductDetail: React.FC<{ data: ProductData; onBack: () => void; onNavigat
               
               <div className="grid grid-cols-2 gap-8 pt-10 border-t border-white/10">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest opacity-30">
+                  <div className="flex items-center gap-2 font-alt text-[10px] uppercase tracking-widest opacity-30">
                     <ShieldCheck size={12} />
                     <span>Protection</span>
                   </div>
                   <p className="text-sm">Level 4 Kinetic Armor</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest opacity-30">
+                  <div className="flex items-center gap-2 font-alt text-[10px] uppercase tracking-widest opacity-30">
                     <Zap size={12} />
                     <span>Weight</span>
                   </div>
@@ -116,7 +116,7 @@ const ProductDetail: React.FC<{ data: ProductData; onBack: () => void; onNavigat
 
           <Reveal delay={0.3}>
             <div className="space-y-10">
-              <h4 className="font-mono text-[10px] uppercase tracking-widest opacity-30">Technical Specifications</h4>
+              <h4 className="font-alt text-[10px] uppercase tracking-widest opacity-30">Technical Specifications</h4>
               <ul className="space-y-4">
                 {(data.specs || ["Water-repellent membrane", "Laser-cut ventilation", "Magnetic closure system", "Internal device pocket"]).map((spec, i) => (
                   <li key={i} className="flex items-center gap-4 group">
@@ -130,7 +130,7 @@ const ProductDetail: React.FC<{ data: ProductData; onBack: () => void; onNavigat
 
           <Reveal delay={0.4}>
             <div className="flex flex-wrap gap-4 pt-10">
-              <button className="px-10 py-4 bg-white text-black font-mono text-[10px] uppercase tracking-widest hover:bg-transparent hover:text-white border border-white transition-all duration-500 flex items-center gap-4">
+              <button className="px-10 py-4 bg-white text-black font-alt text-[10px] uppercase tracking-widest hover:bg-transparent hover:text-white border border-white transition-all duration-500 flex items-center gap-4">
                 Acquire Unit <ArrowRight size={14} />
               </button>
               <button className="p-4 border border-white/10 hover:border-white transition-all duration-500">
@@ -153,7 +153,7 @@ const ProductDetail: React.FC<{ data: ProductData; onBack: () => void; onNavigat
           <div className="space-y-4">
             <motion.p 
               variants={{ hover: { x: 10, opacity: 1 } }}
-              className="font-mono text-[10px] uppercase tracking-widest opacity-30 transition-all"
+              className="font-alt text-[10px] uppercase tracking-widest opacity-30 transition-all"
             >
               Next Project
             </motion.p>

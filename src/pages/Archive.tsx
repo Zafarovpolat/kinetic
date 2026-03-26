@@ -28,11 +28,11 @@ const ArchiveRow: React.FC<{ year: string; title: string; category: string; stat
       onClick={onClick}
       className="group grid grid-cols-12 gap-4 py-8 border-b border-white/10 items-center cursor-pointer hover:bg-white hover:text-black transition-all duration-500 px-4 md:px-8"
     >
-      <div className="col-span-2 font-mono text-[10px] opacity-30 group-hover:opacity-100">{year}</div>
+      <div className="col-span-2 font-alt text-[10px] opacity-30 group-hover:opacity-100">{year}</div>
       <div className="col-span-5 md:col-span-6">
         <h3 className="text-2xl md:text-4xl font-display tracking-tighter group-hover:italic transition-all">{title}</h3>
       </div>
-      <div className="col-span-3 md:col-span-2 font-mono text-[10px] uppercase tracking-widest opacity-30 group-hover:opacity-100">{category}</div>
+      <div className="col-span-3 md:col-span-2 font-alt text-[10px] uppercase tracking-widest opacity-30 group-hover:opacity-100">{category}</div>
       <div className="col-span-2 flex justify-end">
         <div className="w-8 h-8 rounded-full border border-current flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
           <ChevronRight size={16} />
@@ -82,7 +82,7 @@ const Archive: React.FC<{ onBack: () => void; onNavigate: (view: string, data?: 
             </div>
             <div className="md:col-span-4 flex flex-col items-end gap-6">
               <div className="w-full h-px bg-white/10" />
-              <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest">
+              <div className="flex gap-4 font-alt text-[10px] uppercase tracking-widest">
                 {['ALL', 'OUTERWEAR', 'BOTTOMS', 'KNITWEAR'].map((cat) => (
                   <button 
                     key={cat}
@@ -102,7 +102,7 @@ const Archive: React.FC<{ onBack: () => void; onNavigate: (view: string, data?: 
       <section className="px-6 md:px-20">
         <div className="max-w-screen-2xl mx-auto">
           {/* Grid Header */}
-          <div className="grid grid-cols-12 gap-4 py-4 border-y border-white/10 font-mono text-[10px] uppercase tracking-widest opacity-30 px-4 md:px-8">
+          <div className="grid grid-cols-12 gap-4 py-4 border-y border-white/10 font-alt text-[10px] uppercase tracking-widest opacity-30 px-4 md:px-8">
             <div className="col-span-2">Year</div>
             <div className="col-span-5 md:col-span-6">Project Name</div>
             <div className="col-span-3 md:col-span-2">Category</div>
@@ -138,7 +138,7 @@ const Archive: React.FC<{ onBack: () => void; onNavigate: (view: string, data?: 
             </h2>
             <div className="mt-10 flex items-center justify-center gap-4">
               <div className="w-20 h-px bg-white/20 group-hover:w-40 transition-all duration-500" />
-              <p className="font-mono text-[10px] uppercase tracking-widest">Join the system</p>
+              <p className="font-alt text-[10px] uppercase tracking-widest">Join the system</p>
             </div>
           </div>
         </Reveal>

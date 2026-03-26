@@ -36,7 +36,7 @@ const CollectionItem: React.FC<{ id: string; title: string; category: string; im
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
         
         {/* Technical Overlay */}
-        <div className="absolute top-4 left-4 font-mono text-[8px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute top-4 left-4 font-alt text-[8px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <p>Ref: {id}</p>
           <p>Material: Kinetic-Poly</p>
         </div>
@@ -44,7 +44,7 @@ const CollectionItem: React.FC<{ id: string; title: string; category: string; im
       
       <div className="mt-6 flex justify-between items-start">
         <div className="space-y-1">
-          <p className="font-mono text-[10px] uppercase tracking-widest opacity-30">{category}</p>
+          <p className="font-alt text-[10px] uppercase tracking-widest opacity-30">{category}</p>
           <h3 
             onClick={onClick}
             className="text-2xl font-display tracking-tighter group-hover:italic transition-all cursor-pointer"
@@ -101,7 +101,7 @@ const Collection: React.FC<{ onBack: () => void; onNavigate: (view: string, data
               </p>
             </Reveal>
             <Reveal delay={0.3}>
-              <div className="flex gap-20 font-mono text-[10px] uppercase tracking-widest">
+              <div className="flex gap-20 font-alt text-[10px] uppercase tracking-widest">
                 <div className="space-y-2">
                   <p className="opacity-30">Total Units</p>
                   <p>06 / 24</p>
@@ -152,7 +152,7 @@ const Collection: React.FC<{ onBack: () => void; onNavigate: (view: string, data
             </h2>
             <div className="mt-10 flex items-center justify-center gap-4">
               <div className="w-20 h-px bg-white/20 group-hover:w-40 transition-all duration-500" />
-              <p className="font-mono text-[10px] uppercase tracking-widest">Join the system</p>
+              <p className="font-alt text-[10px] uppercase tracking-widest">Join the system</p>
             </div>
           </div>
         </Reveal>
