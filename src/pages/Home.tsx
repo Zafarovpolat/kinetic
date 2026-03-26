@@ -347,21 +347,21 @@ const Home: React.FC<{ onNavigate: (view: string) => void }> = ({ onNavigate }) 
           </Reveal>
           <div className="space-y-px bg-black/10 border-y border-black/10">
             {[
-              { year: "2025", name: "Cyber-Organic Shell", cat: "Outerwear" },
-              { year: "2024", name: "Kinetic Trousers v1", cat: "Bottoms" },
-              { year: "2024", name: "Distortion Knit", cat: "Knitwear" },
-              { year: "2023", name: "Liquid Accessory Set", cat: "Hardware" }
+              { year: "2025", title: "Cyber-Organic Shell", category: "Outerwear", img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=1200" },
+              { year: "2024", title: "Kinetic Trousers v1", category: "Bottoms", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=1200" },
+              { year: "2024", title: "Distortion Knit", category: "Knitwear", img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200" },
+              { year: "2023", title: "Liquid Accessory Set", category: "Hardware", img: "https://images.unsplash.com/photo-1529139513402-f20a99117592?auto=format&fit=crop&q=80&w=1200" }
             ].map((item, i) => (
               <div 
                 key={i} 
-                onClick={() => onNavigate('archive')}
+                onClick={() => onNavigate('product-detail', item)}
                 className="bg-white py-8 flex justify-between items-center group cursor-pointer hover:px-8 transition-all duration-500"
               >
                 <div className="flex items-center gap-20">
                   <span className="font-mono text-[10px] opacity-30">{item.year}</span>
-                  <h3 className="text-3xl font-display tracking-tighter group-hover:italic transition-all">{item.name}</h3>
+                  <h3 className="text-3xl font-display tracking-tighter group-hover:italic transition-all">{item.title}</h3>
                 </div>
-                <span className="font-mono text-[10px] uppercase tracking-widest opacity-30 group-hover:opacity-100">{item.cat}</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest opacity-30 group-hover:opacity-100">{item.category}</span>
               </div>
             ))}
           </div>

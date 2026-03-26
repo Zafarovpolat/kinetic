@@ -18,10 +18,13 @@ const Reveal: React.FC<{ children: ReactNode; delay?: number; blur?: boolean; y?
   );
 };
 
-const CollectionItem: React.FC<{ id: string; title: string; category: string; img: string; delay: number }> = ({ id, title, category, img, delay }) => {
+const CollectionItem: React.FC<{ id: string; title: string; category: string; img: string; delay: number; onClick: () => void }> = ({ id, title, category, img, delay, onClick }) => {
   return (
     <Reveal delay={delay} y={50} className="group relative">
-      <div className="aspect-[3/4] overflow-hidden bg-zinc-900 relative">
+      <div 
+        onClick={onClick}
+        className="aspect-[3/4] overflow-hidden bg-zinc-900 relative cursor-pointer"
+      >
         <motion.img 
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 1.5, ease: "circOut" }}
@@ -42,11 +45,17 @@ const CollectionItem: React.FC<{ id: string; title: string; category: string; im
       <div className="mt-6 flex justify-between items-start">
         <div className="space-y-1">
           <p className="font-mono text-[10px] uppercase tracking-widest opacity-30">{category}</p>
-          <h3 className="text-2xl font-display tracking-tighter group-hover:italic transition-all">{title}</h3>
+          <h3 
+            onClick={onClick}
+            className="text-2xl font-display tracking-tighter group-hover:italic transition-all cursor-pointer"
+          >
+            {title}
+          </h3>
         </div>
         <motion.div 
           whileHover={{ rotate: 45 }}
-          className="p-2 border border-white/10 rounded-full"
+          onClick={onClick}
+          className="p-2 border border-white/10 rounded-full cursor-pointer"
         >
           <ArrowDownRight size={16} />
         </motion.div>
@@ -55,7 +64,7 @@ const CollectionItem: React.FC<{ id: string; title: string; category: string; im
   );
 };
 
-const Collection: React.FC<{ onBack: () => void; onNavigate: (view: string) => void }> = ({ onBack, onNavigate }) => {
+const Collection: React.FC<{ onBack: () => void; onNavigate: (view: string, data?: any) => void }> = ({ onBack, onNavigate }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
@@ -111,7 +120,12 @@ const Collection: React.FC<{ onBack: () => void; onNavigate: (view: string) => v
       <section className="px-6 md:px-20">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-32">
           {items.map((item, i) => (
-            <CollectionItem key={item.id} {...item} delay={i * 0.1} />
+            <CollectionItem 
+              key={item.id} 
+              {...item} 
+              delay={i * 0.1} 
+              onClick={() => onNavigate('product-detail', item)}
+            />
           ))}
         </div>
       </section>

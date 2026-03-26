@@ -5,11 +5,18 @@ import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import Archive from "./pages/Archive";
 import Studio from "./pages/Studio";
+import ProductDetail, { ProductData } from "./pages/ProductDetail";
 import Header from "./components/Header";
 
 export default function App() {
   const [view, setView] = useState('home');
+  const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleNavigate = (newView: string, data?: any) => {
+    if (data) setSelectedProduct(data);
+    setView(newView);
+  };
   
   // Re-init Lenis on view change
   useEffect(() => {
@@ -38,7 +45,7 @@ export default function App() {
 
   return (
     <div ref={containerRef} className="grain min-h-screen bg-black font-sans selection:bg-white selection:text-black">
-      <Header onNavigate={setView} />
+      <Header onNavigate={handleNavigate} />
       <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <motion.div
           key={view}
@@ -49,16 +56,23 @@ export default function App() {
           className="w-full"
         >
           {view === 'home' && (
-            <Home onNavigate={setView} />
+            <Home onNavigate={handleNavigate} />
           )}
           {view === 'collection' && (
-            <Collection onBack={() => setView('home')} onNavigate={setView} />
+            <Collection onBack={() => setView('home')} onNavigate={handleNavigate} />
           )}
           {view === 'archive' && (
-            <Archive onBack={() => setView('home')} onNavigate={setView} />
+            <Archive onBack={() => setView('home')} onNavigate={handleNavigate} />
           )}
           {view === 'studio' && (
-            <Studio onBack={() => setView('home')} onNavigate={setView} />
+            <Studio onBack={() => setView('home')} onNavigate={handleNavigate} />
+          )}
+          {view === 'product-detail' && selectedProduct && (
+            <ProductDetail 
+              data={selectedProduct} 
+              onBack={() => setView('collection')} 
+              onNavigate={handleNavigate} 
+            />
           )}
         </motion.div>
       </AnimatePresence>

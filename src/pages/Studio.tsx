@@ -62,9 +62,7 @@ const Studio: React.FC<{ onBack: () => void; onNavigate: (view: string) => void 
             </div>
           </div>
           <div className="md:col-span-1 hidden md:block flex justify-end">
-             <div className="writing-vertical-rl font-mono text-[10px] uppercase tracking-[1em] opacity-30">
-              SCROLL TO EXPLORE
-            </div>
+             {/* Removed SCROLL TO EXPLORE */}
           </div>
         </div>
       </section>

@@ -18,13 +18,14 @@ const Reveal: React.FC<{ children: ReactNode; delay?: number; blur?: boolean; y?
   );
 };
 
-const ArchiveRow: React.FC<{ year: string; title: string; category: string; status: string; delay: number }> = ({ year, title, category, status, delay }) => {
+const ArchiveRow: React.FC<{ year: string; title: string; category: string; status: string; delay: number; onClick: () => void }> = ({ year, title, category, status, delay, onClick }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
+      onClick={onClick}
       className="group grid grid-cols-12 gap-4 py-8 border-b border-white/10 items-center cursor-pointer hover:bg-white hover:text-black transition-all duration-500 px-4 md:px-8"
     >
       <div className="col-span-2 font-mono text-[10px] opacity-30 group-hover:opacity-100">{year}</div>
@@ -41,7 +42,7 @@ const ArchiveRow: React.FC<{ year: string; title: string; category: string; stat
   );
 };
 
-const Archive: React.FC<{ onBack: () => void; onNavigate: (view: string) => void }> = ({ onBack, onNavigate }) => {
+const Archive: React.FC<{ onBack: () => void; onNavigate: (view: string, data?: any) => void }> = ({ onBack, onNavigate }) => {
   const [filter, setFilter] = useState('ALL');
   const archiveItems = [
     { year: "2025", title: "CYBER-ORGANIC SHELL", category: "OUTERWEAR", status: "RELEASED" },
@@ -118,6 +119,7 @@ const Archive: React.FC<{ onBack: () => void; onNavigate: (view: string) => void
                 category={item.category}
                 status={item.status}
                 delay={i * 0.05}
+                onClick={() => onNavigate('product-detail', item)}
               />
             ))}
           </div>
